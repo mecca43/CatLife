@@ -7,11 +7,11 @@ namespace CatLife
         static void Main(string[] args)
         {
             Cat margit = new Cat();
-            margit.Name = "Margit";
-            margit.Weight = 4.5;
+            margit.Name = " margit";
+            margit.Weight = 0.5;
             margit.Hungry = true;
 
-            Cat pamacs = new Cat("Pamacs", 6.8, false);
+            Cat pamacs = new Cat("Pamacs", 14, false);
             Cat cirmi = new Cat("Cirmi", 2.7);
 
             Console.WriteLine("Kiindulási állapot: ");

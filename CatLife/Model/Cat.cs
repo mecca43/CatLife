@@ -9,11 +9,34 @@ namespace CatLife.Model
     internal class Cat
     {
         //tulajdonsag - auto property
-        public string Name { get; set; }
-        
-        public double Weight { get; set; }
+        private string _name;
+
+        private double _weight;
 
         public bool Hungry { get; set; }
+        public string Name
+        {
+            get => _name;
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                    throw new ArgumentException("A macskának kell hogy legyen neve");
+                _name = value.Trim();
+                _name = char.ToUpper(_name[0]) + _name.Substring(1);
+            }
+        }
+
+        public double Weight {
+            get => _weight;
+            set { 
+                if (value < 1)
+                    _weight = 1;
+                else if (value > 12)
+                    _weight = 12;
+                else
+                    _weight = value;
+            }
+            }
 
         //ures konsktruktor
         public Cat()
